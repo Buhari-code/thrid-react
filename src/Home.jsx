@@ -1,27 +1,21 @@
-import React, { useContext } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { removeUser } from './redux/slice'
-import { OauthContext } from './AuthContext'
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { OauthContext } from './AuthContext';
+import './Home.css';
 
 function Home() {
+  const { logout } = useContext(OauthContext);
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-  const {logout} = useContext(OauthContext)
-
-  const userData = JSON.parse(localStorage.getItem("UserData"))
-
+  const userData = JSON.parse(localStorage.getItem("UserData"));
 
   return (
-    <div>
-      Home
-      <Link to={'/Login'}>Login</Link>
-      <button onClick={logout}>Logout</button>
-      <h1>Welcome {userData[0]?.Name}</h1>
+    <div className="home-container">
+      <h1>Home</h1>
+      <Link to={'/Login'} className="login-link">Login</Link>
+      <button onClick={logout} className="logout-btn">Logout</button>
+      <h1 className="welcome-text">Welcome {userData?.[0]?.Name}</h1>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

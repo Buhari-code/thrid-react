@@ -1,0 +1,39 @@
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.login-link {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.login-link:hover {
+    background-color: #0056b3;
+}
+
+.logout-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
+    background-color: #a71d2a;
+}
+
+.welcome-text {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+}
